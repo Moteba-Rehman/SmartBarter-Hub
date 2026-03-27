@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Profile - SmartBarter Hub</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            box-sizing: border-box;
+            margin-top: 8px;
+        }
+
+        input[type="text"]:focus {
+            border-color: #173068;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.2rem;
+            background-color: #173068;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #3d70a0;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #173068;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Create Your Profile</h1>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="form-container">
+            <h2>Exchange Items and Skills</h2>
+            <form action="/create_profile" method="POST">
+                <!-- Item Input Field -->
+                <div class="input-group">
+                    <label for="item">Item to Exchange: </label>
+                    <input type="text" id="item" name="item" placeholder="e.g., Laptop, Headphones" required>
+                </div>
+
+                <!-- Skill Input Field -->
+                <div class="input-group">
+                    <label for="skill">Skill to Offer: </label>
+                    <input type="text" id="skill" name="skill" placeholder="e.g., Graphic Design, Coding" required>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="input-group">
+                    <button type="submit" class="submit-btn">Create Profile</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 SmartBarter Hub | All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+

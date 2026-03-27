@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listings - SmartBarter Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Add Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #131c6d;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            padding: 20px;
+        }
+
+        .filter-buttons {
+            margin-bottom: 30px;
+        }
+
+        .filter-buttons button {
+            background-color: #2a4291;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            margin-right: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filter-buttons button:hover {
+            background-color: #273292;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            max-width: 600px;
+            margin: 0;
+            padding-bottom: 30px;
+        }
+
+        li {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        li i {
+            margin-right: 10px;
+            color: #202c9b;
+        }
+
+        li span {
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: #2766c4;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #2e688f;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #173068;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Available Listings</h1>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Filter Buttons for Categories -->
+        <div class="filter-buttons">
+            <button><i class="fas fa-headphones"></i> Electronics</button>
+            <button><i class="fas fa-laptop"></i> Laptops</button>
+            <button><i class="fas fa-book"></i> Books</button>
+            <button><i class="fas fa-wrench"></i> Tools</button>
+        </div>
+
+        <!-- Listings Section -->
+        <ul>
+            {% for listing in listings %}
+                <li>
+                    <span>Item: {{ listing.item }}</span>
+                    <span>Skill: {{ listing.skill }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <!-- Link to Create Profile Page -->
+        <a href="/create_profile">Create Your Profile</a>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 SmartBarter Hub | All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
